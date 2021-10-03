@@ -28,11 +28,12 @@ FIG.figSetting(fig, width, ratio, 'FontSize', 10, 'FontSizeIn',10, 'Journal', 'a
 - `Journal`: 内置期刊名，提前定义好图片尺寸、图片文字的字体字号，目前只定义了`acess`,`mythesis`
 - `Interpreter`：解析器，默认 `tex`, 有较复杂数学表达式时，需用 `latex`
 
-### 方法 2 —— 保存图片为 pdf 格式到系统桌面
+### 方法 2 —— 保存图片为 pdf
 
 ```matlab
-FIG.savepdf(fig, filename)
+FIG.savepdf(fig, filename, filepath)
 ```
 
 - `fig`: 图片句柄
 - `filename`(可选参数): 保存文件名字符串，默认为 `MySavedFile`
+- `filepath`(可选参数): 保存文件的路径，默认为系统桌面

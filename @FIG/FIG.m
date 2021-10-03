@@ -38,7 +38,7 @@ classdef FIG
     
     methods(Static)
         figSetting(fig, varargin)
-        savepdf(fig, varargin)        
+        savepdf(fig, filename, filepath)        
         out = text(str, language)        
     end
 end
