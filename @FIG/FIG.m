@@ -35,7 +35,7 @@ classdef FIG
                 0.6350    0.0780    0.1840 % brown
                 0.5020    0.5020    0.5020];  % gray
         
-                arrowProps = {'tipangle',20, 'baseangle',30, 'length',7};
+                arrowProps = {'tipangle',20, 'baseangle',30, 'length',8};
     end
     
     methods(Static)
