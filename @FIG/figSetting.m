@@ -9,7 +9,7 @@ function figSetting(fig, varargin)
     p.addParameter('FontSize', 10.5);
     p.addParameter('FontSizeIn', 10.5); % 图内(legend/text)字号
     p.addParameter('Journal', '');
-    p.addParameter('Interpreter', 'tex', @ischar);
+    p.addParameter('Interpreter', 'tex', @ischar); %todo 不要这个参数了
     p.parse(varargin{:});
 
     switch p.Results.Journal
@@ -17,42 +17,58 @@ function figSetting(fig, varargin)
             font_size = 8;
             fzinfig = 8;
             w = 8.5;
-            ft = 'Times';
+            fteg = 'Times';
         case 'mythesis'
             font_size = 10.5;
             fzinfig = 10.5;
             w = 8;
-            ft = 'Times New Roman';
+            fteg = 'Times New Roman'; % 系统原始默认字体为 Helvetica
         otherwise
             font_size = p.Results.FontSize;
             fzinfig = p.Results.FontSizeIn;
             w = p.Results.width;
-            ft = 'Times New Roman';
+            fteg = 'Times New Roman'; % english fontname
+            ftch = 'SimSun'; % chinese fontname
     end
     
     fig.Position = [10 5 w w*p.Results.ratio];  % 后两位为 width, height
 
     set(findobj(fig, 'Type', 'axes'),...
-        'FontName',ft,'FontSize',font_size,...
+        'FontName',fteg,'FontSize',font_size,...
         'FontSizeMode','manual','LabelFontSizeMultiplier',1,...
         'LineWidth',1,...    
         'XGrid', 'on', 'YGrid', 'on', 'Box', 'on',...
         'GridLineStyle', '--','GridAlpha', 0.3,...
         'Color', 'none');
     set(findobj(fig, 'Type', 'legend'),...
-        'Interpreter',p.Results.Interpreter,...
         'Visible', 'on', 'Box', 'on','Color', [1 1 1],...
-        'LineWidth',0.5,'Location', 'best', 'FontName',ft,'FontSize', fzinfig);
-    set(findobj(fig, 'Type', 'text'),...
-        'FontSize',fzinfig, 'FontName',ft,...
-        'LineStyle','none',...
-        'Interpreter',p.Results.Interpreter);
+        'LineWidth',0.5,'Location', 'best','FontSize', fzinfig);
+
+    %=========setting font name===========
+    h = findall(fig, '-property', 'String'); % all text,legend, label object
+    for i = 1:length(h)
+        if iscell(h(i).String)
+            ss = h(i).String{1};
+        else
+            ss = h(i).String;
+        end
+
+        if max(abs(ss)) < 300 %！ 不可统一设置，中文论文中也英文标注 
+            h(i).FontName = fteg;
+        else
+            h(i).FontName = ftch;
+        end
+
+        if ~isempty(ss) && ss(1) == '$' % 第1位出现 $ 符号，则用 latex 解析
+            h(i).Interpreter = 'latex';
+        end
+    end
+
     % annotation object need to use findall
     set(findall(fig, 'Type', 'arrowshape'),...
         'LineWidth',0.5,...
-        'HeadWidth',6, 'HeadLength',6, 'HeadStyle','vback3');
+        'HeadWidth',4.5, 'HeadLength',5, 'HeadStyle','vback3');
     set(findall(fig, 'Type', 'textarrow'),...
-        'Interpreter',p.Results.Interpreter,...
-        'FontSize',font_size,'FontName',ft,'LineWidth',0.5,...
-        'HeadWidth',6, 'HeadLength',6, 'HeadStyle','vback3');
+        'FontSize',font_size,'FontName',fteg,'LineWidth',0.5,...
+        'HeadWidth',5, 'HeadLength',5, 'HeadStyle','vback2');
 end
