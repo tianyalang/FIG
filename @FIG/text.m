@@ -37,10 +37,10 @@ function out = text(str, language)
             sch = '\fontname{Monosaced}转子位置角 {\fontname{Times New Roman}\theta\fontsize{8} r} (度)';
             sen = 'Rotor Position (Mech. Deg.)';
         case 'FEM'
-            sch = '\fontname{Monosaced}有限元';
+            sch = '有限元';
             sen = 'FEM';        
         case 'Analytical'
-            sch = '\fontname{Monosaced}子域法';
+            sch = '子域法';
             sen = 'Analytical';
         case 'Measured'
             sch = '\fontname{Monosaced}实测值';
@@ -49,10 +49,10 @@ function out = text(str, language)
             sch = '\fontname{Monosaced}改进子域法';
             sen = 'Analytical Enhanced';
         case 'tan'
-            sch = '\fontname{Monosaced}周向';
+            sch = '周向';
             sen = 'Tangential';
         case 'rad'
-            sch = '\fontname{Monosaced}径向';
+            sch = '径向';
             sen = 'Radial';
         case 'Psi'
             sch = '\fontname{Monosaced}磁链 \fontname{Times New Roman} \psi (Wb)';
