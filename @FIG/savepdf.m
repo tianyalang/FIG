@@ -13,8 +13,8 @@ function savepdf(fig, filename, filepath)
     fig_pos = fig.PaperPosition;
     fig.PaperSize = [fig_pos(3) fig_pos(4)];
     % 打印背景颜色设定为透明
-    fig.InvertHardcopy = 'off';
-    fig.Color = 'none';
-
+    fig.InvertHardcopy = 'off'; % turn off change background color to white
+    fig.Color = 'none'; % appears black on screen, but transparent if printed
+   
     print(fig, [filepath, filename], '-dpdf')
 end
