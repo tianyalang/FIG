@@ -62,6 +62,8 @@ function figSetting(fig, varargin)
         if ~isempty(ss) && ss(1) == '$' % 第1位出现 $ 符号，则用 latex 解析
             h(i).Interpreter = 'latex';
         end
+        
+        h(i).FontSize = fzinfig;
     end
 
     % annotation object need to use findall
