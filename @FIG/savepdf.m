@@ -1,6 +1,8 @@
 function savepdf(fig, filename, filepath)
 %保存 figure 对象为同尺寸的 pdf
-% 默认保存于系统桌面
+% fig: 图形句柄, 必选参数
+% filename: 文件名, 可选，默认 MySavedFile
+% filepath: 保存路径，可选，默认系统桌面
 
     if nargin < 3
         filepath = [getenv('UserProfile'), '\Desktop\']; % 自动查找桌面路径
