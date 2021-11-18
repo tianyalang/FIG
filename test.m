@@ -1,18 +1,19 @@
 clear
 close all
 
-% t = 0:0.1:10;
-% for i = 1:8
-%     y = sin(t+0.5*i);
-%     plot(t, y, 'color', FIG.color(i,:));
-%     hold on
-% end
 
 x = 0:0.1:10;
 y = sin(x);
 z = cos(x);
 plot(x, [y; z])
 
-legend('y=sin(x)', '$z=cos(x)$')
+title({'正弦曲线';'$x=y^2$'}) %todo bug
+xlabel('x=y^2')
+ylabel('$x^3=y_2$')
+legend('$y=\sin(x)$', 'z=cos(x)') %fixed, $只有放在第一个表达式，才能解析出来
 
-FIG.figSetting(gcf)
+text(4, 0.5, '正弦线xee')
+annotation('arrow')
+
+%%
+% FIG.figSetting(gcf, 12, 0.5)
