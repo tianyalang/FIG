@@ -9,7 +9,7 @@ function figSetting(fig, varargin)
     p.addParameter('FontSize', 10.5);
     p.addParameter('FontSizeIn', 10.5); % 图内(legend/text)字号
     p.addParameter('Journal', '');
-    p.addParameter('Interpreter', 'tex', @ischar); %todo 不要这个参数了
+    % p.addParameter('Interpreter', 'tex', @ischar); %todo 不要这个参数了,测试一段时间再移除2011.11.19
     p.parse(varargin{:});
 
     switch p.Results.Journal
@@ -23,6 +23,7 @@ function figSetting(fig, varargin)
             fzinfig = 10.5;
             w = 8;
             fteg = 'Times New Roman'; % 系统原始默认字体为 Helvetica
+            ftch = 'SimSun'; % chinese fontname
         otherwise
             font_size = p.Results.FontSize;
             fzinfig = p.Results.FontSizeIn;
@@ -30,7 +31,8 @@ function figSetting(fig, varargin)
             fteg = 'Times New Roman'; % english fontname
             ftch = 'SimSun'; % chinese fontname
     end
-    
+
+    % 图片显示位置
     fig.Position = [10 5 w w*p.Results.ratio];  % 后两位为 width, height
 
     set(findobj(fig, 'Type', 'axes'),...
@@ -69,7 +71,7 @@ function figSetting(fig, varargin)
     % annotation object need to use findall
     set(findall(fig, 'Type', 'arrowshape'),...
         'LineWidth',0.5,...
-        'HeadWidth',4.5, 'HeadLength',5, 'HeadStyle','vback3');
+        'HeadWidth',5, 'HeadLength',6, 'HeadStyle','vback3');
     set(findall(fig, 'Type', 'textarrow'),...
         'FontSize',font_size,'FontName',fteg,'LineWidth',0.5,...
         'HeadWidth',5, 'HeadLength',5, 'HeadStyle','vback2');
