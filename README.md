@@ -12,6 +12,8 @@ plot(x, y, 'color', FIG.color(n,:))
 
 其中 n=1:8
 
+![colormap](./colormap.jpg)
+
 ## 类方法
 
 ### 方法 1 —— 设置图片的宽度、宽高比、文字大小等
