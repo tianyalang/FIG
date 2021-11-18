@@ -1,6 +1,7 @@
 # Matlab 绘图后处理
 
-实现图片标注、字体字号调整、图片宽度设置，导出pdf等功能
+- 一键实现图片位置、大小、字体、背景、网格、标注等设置
+- 导出pdf
 
 ## 类属性
 
@@ -26,9 +27,42 @@ FIG.figSetting(fig, width, ratio, 'FontSize', 10, 'FontSizeIn',10, 'Journal', 'a
 - `width`(可选): 图像宽度/cm，默认 8
 - `ratio`(可选): 图像高宽比，默认 0.75, 即默认高度 6cm
 - `FontSize`(可选, name-value,下同): 坐标轴标注文字字号大小，默认10.5/五号
-- `FontSizeIn`: 图内文字字号大小，默认10.5/五号
+- `FontSizeIn`: 图内文字(legend,text)字号大小，默认10.5/五号
 - `Journal`: 内置期刊名，提前定义好图片尺寸、图片文字的字体字号，目前只定义了`acess`,`mythesis`
-- `Interpreter`：解析器，默认 `tex`, 有较复杂数学表达式时，需用 `latex`
+
+其他默认设置
+
+- 字体，中文统一宋体，英文数字统一`'Times New Roman'`
+- 背景透明
+- 网格开启，线型--，透明度0.3
+- 四边框开启
+- legend： 边框显示，白色背景，线宽0.5，位置'best'
+- 箭头：线宽0.5，头宽5，头长6，'vback3'风格
+- 解析器，根据字符串中是否出现`'$'`自动选择是否启用`'latex'`
+
+举例
+
+```matlab
+x = 0:0.1:10;
+y = sin(x);
+z = cos(x);
+plot(x, [y; z])
+
+title({'正弦曲线';'$x=y^2$'}) %todo bug
+xlabel('x=y^2')
+ylabel('$x^3=y_2$')
+legend('$y=\sin(x)$', 'z=cos(x)') %fixed, $只有放在第一个表达式，才能解析出来
+
+text(4, 0.5, '正弦线xee')
+annotation('arrow')
+
+FIG.figSetting(gcf, 12, 0.5)
+```
+
+设置前
+![设置前](img/beforeSet.png)
+设置后
+![设置后](img/afterSet.png)
 
 ### 方法 2 —— 保存图片为 pdf
 
@@ -39,3 +73,8 @@ FIG.savepdf(fig, filename, filepath)
 - `fig`: 图片句柄
 - `filename`(可选参数): 保存文件名字符串，默认为 `MySavedFile`
 - `filepath`(可选参数): 保存文件的路径，默认为系统桌面
+
+### TODO
+
+- bug: 标题换行且中文与 latex 表达式同时出现
+- bug: legend同时出现 tex 与 latex 表达式
