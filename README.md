@@ -12,7 +12,7 @@ plot(x, y, 'color', FIG.color(n,:))
 
 其中 n=1:8
 
-![colormap](./colormap.jpg)
+![colormap](./img/colormap.jpg)
 
 ## 类方法
 
