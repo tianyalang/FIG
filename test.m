@@ -13,7 +13,8 @@ ylabel('$x^3=y_2$')
 legend('$y=\sin(x)$', 'z=cos(x)') %fixed, $只有放在第一个表达式，才能解析出来
 
 text(4, 0.5, '正弦线xee')
+text(4, 0, '$y=\frac{a}{b^2}$')
 annotation('arrow')
 
 %%
-% FIG.figSetting(gcf, 12, 0.5)
+FIG.figSetting(gcf, 12, 0.5)
