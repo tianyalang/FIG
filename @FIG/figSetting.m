@@ -9,7 +9,6 @@ function figSetting(fig, varargin)
     p.addParameter('FontSize', 10.5);
     p.addParameter('FontSizeIn', 10.5); % 图内(legend/text)字号
     p.addParameter('Journal', '');
-    % p.addParameter('Interpreter', 'tex', @ischar); %todo 不要这个参数了,测试一段时间再移除2011.11.19
     p.parse(varargin{:});
 
     switch p.Results.Journal

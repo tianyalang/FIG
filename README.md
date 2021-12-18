@@ -20,7 +20,7 @@ plot(x, y, 'color', FIG.color(n,:))
 ### 方法 1 —— 设置图片的宽度、宽高比、文字大小等
 
 ```matlab
-FIG.figSetting(fig, width, ratio, 'FontSize', 10, 'FontSizeIn',10, 'Journal', 'acess', 'Interpreter', 'latex')
+FIG.figSetting(fig, width, ratio, 'FontSize', 10, 'FontSizeIn',10, 'Journal', 'acess')
 ```
 
 - `fig`(必选): 图片句柄, 当前图片可用 gcf 传入
@@ -37,8 +37,7 @@ FIG.figSetting(fig, width, ratio, 'FontSize', 10, 'FontSizeIn',10, 'Journal', 'a
 - 网格开启，线型--，透明度0.3
 - 四边框开启
 - legend： 边框显示，白色背景，线宽0.5，位置'best'
-- 箭头：线宽0.5，头宽5，头长6，'vback3'风格
-- 解析器，根据字符串中是否出现`'$'`自动选择是否启用`'latex'`
+- 箭头：头宽5，头长6，'vback3'风格
 
 举例
 
