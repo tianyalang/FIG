@@ -65,7 +65,11 @@ function figSetting(fig, varargin)
         end
         
         h(i).FontSize = fzinfig;
-        h(i).HorizontalAlignment = 'center'; % 系统默认文字左侧为设置坐标，这里改为文字中心
+        try
+            h(i).HorizontalAlignment = 'center'; % 系统默认文字左侧为设置坐标，这里改为文字中心
+        catch
+            % legend对象不含此属性，避免报错。只有在 text 对象中起作用
+        end
     end
 
     % annotation object need to use findall
