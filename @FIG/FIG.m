@@ -7,7 +7,7 @@ classdef FIG
 % 其中 n=1:8
 % ----------------------------------
 % 类方法1--设置图片的宽度、宽高比、文字大小等
-%   FIG.figSetting(fig, width, ratio, 'FontSize', 10, 'FontSizeIn',10, 'Journal', 'acess', 'Interpreter', 'latex')
+%   FIG.figSetting(fig, width, ratio, 'FontSize', 10, 'FontSizeIn',10, 'Journal', 'acess')
 % 必选参数
 %   fig: 图片句柄, 当前图片可用 gcf 传入
 % 可选参数
@@ -17,7 +17,6 @@ classdef FIG
 %   'FontSize': 坐标轴标注文字字号大小，默认10.5/五号
 %   'FontSizeIn': 图内文字字号大小，默认10.5/五号
 %   'Journal': 内置期刊名，提前定义好图片尺寸、图片文字的字体字号，目前只定义了'acess','mythesis'
-%   'Interpreter'：解析器，默认 'tex', 有较复杂数学表达式时，需用 'latex'
 % ----------------------------------
 % 类方法2--保存图片为 pdf 格式到系统桌面
 %   FIG.savepdf(fig, filename)
