@@ -10,31 +10,31 @@ function out = text(str, language)
     
     switch str
         case 'A'
-            sch = '\fontname{Monosaced}矢量磁位 \fontname{Times New Roman}A (T\cdot m)';
+            sch = '\fontname{SimSun}矢量磁位\fontname{Times New Roman}{\it A} (T\cdot m)';
             sen = 'Magnetic vector potential (T\cdot m)';
         case 'B'
-            sch = '\fontname{Monosaced}磁通密度 \fontname{Times New Roman}B (T)';
+            sch = '\fontname{SimSun}磁通密度\fontname{Times New Roman}{\it B} (T)';
             sen = 'Flux density (T)';
         case 'Br'
-            sch = '\fontname{Monosaced}径向磁通密度 \fontname{Times New Roman}Br (T)';
+            sch = '\fontname{SimSun}径向磁通密度\fontname{Times New Roman}{\it B}{\fontsize{8}r} (T)';
             sen = 'Radial flux density (T)';
         case 'Bt'
-            sch = '\fontname{Monosaced}周向磁通密度 \fontname{Times New Roman}B_\theta (T)';
+            sch = '\fontname{SimSun}周向磁通密度\fontname{Times New Roman}{\it B}{\fontsize{6}\theta} (T)';
             sen = 'Tangential flux density (T)';
         case 'H'
-            sch = '\fontname{Monosaced}磁场强度 \fontname{Times New Roman}H (A/m)';
+            sch = '\fontname{SimSun}磁场强度\fontname{Times New Roman}{\it H} (A/m)';
             sen = 'Magnetic field strength (A/m)';
         case 'Ht'
-            sch = '\fontname{Monosaced}切向磁场强度 \fontname{Times New Roman}Ht (A/m)';
+            sch = '\fontname{SimSun}切向磁场强度\fontname{Times New Roman}{\it Ht} (A/m)';
             sen = 'Tangential magnetic field strength (A/m)';
         case 'I'
-            sch = '\fontname{Monosaced}励磁电流 \fontname{Times New Roman}I (A)';
+            sch = '\fontname{SimSun}励磁电流\fontname{Times New Roman}{\it I} (A)';
             sen = 'Current (A)';
         case 'Theta'
-            sch = '\fontname{Monosaced}机械角 (度)';
+            sch = '\fontname{SimSun}机械角 {\fontname{Times New Roman}\theta} (度)';
             sen = 'Position (Mech. Deg.)';
         case 'RotorTheta'
-            sch = '\fontname{Monosaced}转子位置角 {\fontname{Times New Roman}\theta\fontsize{8} r} (度)';
+            sch = '\fontname{SimSun}转子位置角 {\fontname{Times New Roman}\theta\fontsize{8} r} (度)';
             sen = 'Rotor Position (Mech. Deg.)';
         case 'FEM'
             sch = '有限元';
@@ -43,10 +43,10 @@ function out = text(str, language)
             sch = '子域法';
             sen = 'Analytical';
         case 'Measured'
-            sch = '\fontname{Monosaced}实测值';
+            sch = '实测值';
             sen = 'Measured';
         case 'EnAnalytical'
-            sch = '\fontname{Monosaced}改进子域法';
+            sch = '改进子域法';
             sen = 'Analytical Enhanced';
         case 'tan'
             sch = '周向';
@@ -55,21 +55,18 @@ function out = text(str, language)
             sch = '径向';
             sen = 'Radial';
         case 'Psi'
-            sch = '\fontname{Monosaced}磁链 \fontname{Times New Roman} \psi (Wb)';
+            sch = '\fontname{SimSun}磁链 \fontname{Times New Roman}\psi (Wb)';
             sen = 'Flux Linkage (Wb)';
         case 'L'
-            sch = '\fontname{Monosaced}电感 \fontname{Times New Roman}L (H)';
+            sch = '\fontname{SimSun}电感\fontname{Times New Roman}{\it L} (H)';
             sen = 'Inductance (H)';
         case 'Te'
-            sch = '\fontname{Monosaced}电磁转矩 \fontname{Times New Roman}Te (N\cdot m)';
+            sch = '\fontname{SimSun}电磁转矩\fontname{Times New Roman}{\it T{\rm\fontsize{8}e}} (N\cdot m)';
             sen = 'Electromagnetic torque (N\cdot m)';
         case 'Drop'
-            sch = '\fontname{Monosaced}磁压降 (安匝)';
+            sch = '磁压降 (安匝)';
         case 'Distance'
-            sch = '\fontname{Monosaced}距离 \fontname{Times New Roman} (m)';
-        otherwise
-            sch = ['\fontname{Monosaced}', str];
-            sen = str;
+            sch = '\fontname{SimSun}距离 \fontname{Times New Roman} (m)';
     end
     
     switch language
