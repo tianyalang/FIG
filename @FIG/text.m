@@ -25,7 +25,7 @@ function out = text(str, language)
             sch = '\fontname{SimSun}磁场强度\fontname{Times New Roman}{\it H} (A/m)';
             sen = 'Magnetic field strength (A/m)';
         case 'Ht'
-            sch = '\fontname{SimSun}切向磁场强度\fontname{Times New Roman}{\it Ht} (A/m)';
+            sch = '\fontname{SimSun}切向磁场强度\fontname{Times New Roman}{\it H}{\fontsize{8}t} (A/m)';
             sen = 'Tangential magnetic field strength (A/m)';
         case 'I'
             sch = '\fontname{SimSun}励磁电流\fontname{Times New Roman}{\it I} (A)';
@@ -64,9 +64,9 @@ function out = text(str, language)
             sch = '\fontname{SimSun}电磁转矩\fontname{Times New Roman}{\it T{\rm\fontsize{8}e}} (N\cdot m)';
             sen = 'Electromagnetic torque (N\cdot m)';
         case 'Drop'
-            sch = '磁压降 (安匝)';
+            sch = '磁压降(安匝)';
         case 'Distance'
-            sch = '\fontname{SimSun}距离 \fontname{Times New Roman} (m)';
+            sch = '\fontname{SimSun}距离\fontname{Times New Roman} (m)';
     end
     
     switch language
