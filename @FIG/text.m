@@ -31,7 +31,7 @@ function out = text(str, language)
             sch = '\fontname{SimSun}励磁电流\fontname{Times New Roman}{\it I} (A)';
             sen = 'Current (A)';
         case 'Theta'
-            sch = '\fontname{SimSun}机械角 {\fontname{Times New Roman}\theta} (度)';
+            sch = '\fontname{SimSun}机械角{\fontname{Times New Roman}\theta (\circ)}';
             sen = 'Position (Mech. Deg.)';
         case 'RotorTheta'
             sch = '\fontname{SimSun}转子位置角 {\fontname{Times New Roman}\theta\fontsize{8} r} (度)';
