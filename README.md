@@ -5,15 +5,16 @@
 
 ## 类属性
 
-`color`: 自定义颜色表, 已预定义8种颜色, 低版本 Matlab 用此画图更美观
+`color`: 自定义颜色表, 8种, 低版本 Matlab 用此画图更美观
+`color2`: 另一自定义颜色表，4种
 
 ```matlab
-plot(x, y, 'color', FIG.color(n,:))
+plot(x, y, 'color', FIG.color(n,:))   % n=1~8
+plot(x, y, 'color', FIG.color2(n,:))  % n=1~4
 ```
 
-其中 n=1:8
-
 ![colormap](./img/colormap.jpg)
+![colormap2](./img/colormap2.jpg)
 
 ## 类方法
 

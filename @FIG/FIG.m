@@ -25,16 +25,21 @@ classdef FIG
 
     properties(Constant)
         % matlabÐÂ°æÑÕÉ«±í£ºÀ¶£¬ºì£¬³È£¬×Ï£¬ÂÌ£¬Çà£¬×Ø
-        color =[0         0.4470    0.7410 % blue
-                0.8500    0.3250    0.0980 % red
-                1         0.498     0.1529 % orange
-                0.4940    0.1840    0.5560 % purple
-                0.4660    0.6740    0.1880 % green
-                0.3010    0.7450    0.9330 % cyan
-                0.6350    0.0780    0.1840 % brown
-                0.5020    0.5020    0.5020];  % gray
+        color = [0         0.4470    0.7410  % blue
+                 0.8500    0.3250    0.0980  % red
+                 1         0.498     0.1529  % orange
+                 0.4940    0.1840    0.5560  % purple
+                 0.4660    0.6740    0.1880  % green
+                 0.3010    0.7450    0.9330  % cyan
+                 0.6350    0.0780    0.1840  % brown
+                 0.5020    0.5020    0.5020];% gray
+        % Æ«Å¯É«µÄ red, green, yellow, blue 
+        color2 = [200 92 92;
+                   92 200 92;
+                   245 194 65;
+                   92 92 200]/256;     
         
-                arrowProps = {'width',0.1,'tipangle',20, 'baseangle',30, 'length',8};
+        arrowProps = {'width',0.1,'tipangle',20, 'baseangle',30, 'length',8};
     end
     
     methods(Static)
