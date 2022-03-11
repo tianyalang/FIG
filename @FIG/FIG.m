@@ -40,11 +40,12 @@ classdef FIG
                    92 92 200]/256;     
         
         arrowProps = {'width',0.1,'tipangle',20, 'baseangle',30, 'length',8};
+        markerPros = {'MarkerSize', 3,'MarkerFaceColor','k','MarkerEdgeColor','none'};
     end
     
     methods(Static)
         figSetting(fig, varargin)
         savepdf(fig, filename, filepath)        
-        out = text(str, language)        
+        out = text(str, language)
     end
 end
