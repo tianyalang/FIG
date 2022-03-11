@@ -31,14 +31,17 @@ function out = text(str, language)
             sch = '\fontname{SimSun}励磁电流\fontname{Times New Roman}{\it I} (A)';
             sen = 'Current (A)';
         case 'Theta'
-            sch = '\fontname{SimSun}机械角{\fontname{Times New Roman}\theta (\circ)}';
+            sch = '\fontname{SimSun}位置{\fontname{Times New Roman} \theta (\circ)}';
             sen = 'Position (Mech. Deg.)';
         case 'RotorTheta'
             sch = '\fontname{SimSun}转子位置角 {\fontname{Times New Roman}\theta\fontsize{8} r} (度)';
             sen = 'Rotor Position (Mech. Deg.)';
         case 'FEM'
             sch = '有限元';
-            sen = 'FEM';        
+            sen = 'FEM'; 
+        case 'CM'
+            sch = '保角变换';
+            sen = 'Conformal Mapping';
         case 'Analytical'
             sch = '子域法';
             sen = 'Analytical';
@@ -64,9 +67,15 @@ function out = text(str, language)
             sch = '\fontname{SimSun}电磁转矩\fontname{Times New Roman}{\it T{\rm\fontsize{8}e}} (N\cdot m)';
             sen = 'Electromagnetic torque (N\cdot m)';
         case 'Drop'
-            sch = '磁压降(安匝)';
+            sch = '\fontname{SimSun}磁压降\fontname{Times New Roman}{\it u} (A)';
         case 'Distance'
             sch = '\fontname{SimSun}距离\fontname{Times New Roman} (m)';
+        case 'HA'
+            sch = '\fontname{SimSun}谐波幅值\fontname{Times New Roman} (T)';
+            sen = 'Harmonic Amplitude (T)';
+        case 'HO'
+            sch = '谐波阶次';
+            sen = 'Harmonic Order';
     end
     
     switch language
