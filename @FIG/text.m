@@ -61,7 +61,10 @@ function out = text(str, language)
             sch = '\fontname{SimSun}磁链 \fontname{Times New Roman}\psi (Wb)';
             sen = 'Flux Linkage (Wb)';
         case 'L'
-            sch = '\fontname{SimSun}电感\fontname{Times New Roman}{\it L} (H)';
+            sch = '\fontname{SimSun}自感\fontname{Times New Roman}{\it L} (H)';
+            sen = 'Inductance (H)';
+        case 'M'
+            sch = '\fontname{SimSun}互感\fontname{Times New Roman}{\it M} (mH)';
             sen = 'Inductance (H)';
         case 'Te'
             sch = '\fontname{SimSun}电磁转矩\fontname{Times New Roman}{\it T{\rm\fontsize{8}e}} (N\cdot m)';
