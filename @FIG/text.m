@@ -63,6 +63,9 @@ function out = text(str, language)
         case 'L'
             sch = '\fontname{SimSun}自感\fontname{Times New Roman}{\it L} (H)';
             sen = 'Inductance (H)';
+        case 'Lerr'
+            sch = '\fontname{SimSun}电感误差\fontname{Times New Roman}{\it L_{\rm err}} (H)';
+            sen = 'Inductance (H)';
         case 'M'
             sch = '\fontname{SimSun}互感\fontname{Times New Roman}{\it M} (mH)';
             sen = 'Inductance (H)';
