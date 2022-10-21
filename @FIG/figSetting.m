@@ -7,7 +7,7 @@ function figSetting(fig, varargin)
     p.addOptional('width', 8, @isscalar);
     p.addOptional('ratio', 0.75, @isscalar);
     p.addParameter('FontSize', 10.5);
-    p.addParameter('FontSizeIn', 10); % 图内(legend/text)字号
+    p.addParameter('FontSizeIn', 10);   % 图内(legend/text)字号
     p.addParameter('Journal', '');
     p.parse(varargin{:});
 
@@ -18,17 +18,17 @@ function figSetting(fig, varargin)
             w = 8.5;
             fteg = 'Times';
         case 'mythesis'
-            font_size = 10.5; % 10.5 = 五号
+            font_size = 10.5;           % 10.5 = 五号
             fzinfig = 10.5;
             w = 8;
-            fteg = 'Times New Roman'; % 系统原始默认字体为 Helvetica
-            ftch = 'SimSun'; % chinese fontname
+            fteg = 'Times New Roman';   % 系统原始默认字体为 Helvetica
+            ftch = 'SimSun';            % chinese fontname
         otherwise
             font_size = p.Results.FontSize;
             fzinfig = p.Results.FontSizeIn;
             w = p.Results.width;
-            fteg = 'Times New Roman'; % english fontname
-            ftch = 'SimSun'; % chinese fontname
+            fteg = 'Times New Roman';   % english fontname
+            ftch = 'SimSun';            % chinese fontname
     end
 
     % 图片显示位置
@@ -41,6 +41,7 @@ function figSetting(fig, varargin)
         'XGrid', 'on', 'YGrid', 'on', 'Box', 'on',...
         'GridLineStyle', '--','GridAlpha', 0.3,...
         'Color', 'none');
+    set(findobj(fig, 'Type', 'line'), 'LineWidth', 1);
     set(findobj(fig, 'Type', 'legend'),...
         'Visible', 'on', 'Box', 'on','Color', [1 1 1],...
         'LineWidth',0.5,'Location', 'best', 'FontSize', fzinfig);
